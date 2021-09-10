@@ -31,13 +31,12 @@ public class TodoUtil {
 
 	public static void deleteItem(TodoList l) {
 		
-		Scanner sc = new Scanner(System.in);
-		String title = sc.next();
-		
 		System.out.println("\n"
 				+ "========== Delete Item Section\n"
 				+ "enter the title of item to remove\n"
 				+ "\n");
+		Scanner sc = new Scanner(System.in);
+		String title = sc.next();
 		
 		for (TodoItem item : l.getList()) {
 			if (title.equals(item.getTitle())) {
