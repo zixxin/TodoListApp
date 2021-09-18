@@ -1,17 +1,19 @@
 package com.todo.dao;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class TodoItem {
     private String title;
     private String desc;
-    private Date current_date;
+    private String current_date;
 
 
     public TodoItem(String title, String desc){
         this.title=title;
         this.desc=desc;
-        this.current_date=new Date();
+        SimpleDateFormat f = new SimpleDateFormat("yyyy/MM/dd kk:mm:ss");
+        this.current_date = f.format(new Date());
     }
     
     public String getTitle() {
