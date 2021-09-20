@@ -16,6 +16,6 @@ public class Menu {
     }
    
     public static void prompt() {
-    	System.out.println("\n명령어 입력 -> ");
+    	System.out.print("\n명령어 입력 -> ");
     }
 }
