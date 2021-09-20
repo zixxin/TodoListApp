@@ -32,7 +32,7 @@ public class TodoItem {
         this.desc = desc;
     }
 
-    public Date getCurrent_date() {
+    public String getCurrent_date() {
         return current_date;
     }
 
