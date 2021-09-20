@@ -68,7 +68,7 @@ public class TodoUtil {
 		}
 		sc.nextLine();
 		System.out.print("새 내용 입력 -> ");
-		String new_description = sc.next().trim();
+		String new_description = sc.nextLine().trim();
 		for (TodoItem item : l.getList()) {
 			if (item.getTitle().equals(title)) {
 				l.deleteItem(item);
