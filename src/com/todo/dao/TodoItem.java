@@ -10,10 +10,16 @@ public class TodoItem {
 
 
     public TodoItem(String title, String desc){
-        this.title=title;
-        this.desc=desc;
+        this.title = title;
+        this.desc = desc;
         SimpleDateFormat f = new SimpleDateFormat("yyyy/MM/dd kk:mm:ss");
         this.current_date = f.format(new Date());
+    }
+    
+    public TodoItem(String title, String desc, String current_date){
+        this.title = title;
+        this.desc = desc;
+        this.current_date = current_date;
     }
     
     public String getTitle() {
@@ -42,5 +48,9 @@ public class TodoItem {
     
     public String toString() {
     	return "[" + title + "]" + desc + " - " + current_date;
+    }
+    
+    public String toSaveString() {
+    	return title + "##" + desc + "##" + current_date + "\n";
     }
 }

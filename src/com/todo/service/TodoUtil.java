@@ -1,5 +1,11 @@
 package com.todo.service;
 
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.Writer;
 import java.util.*;
 import com.todo.dao.TodoItem;
 import com.todo.dao.TodoList;
@@ -61,12 +67,15 @@ public class TodoUtil {
 
 		System.out.print("새 제목 입력 -> ");
 		String new_title = sc.next().trim();
+		
 		if (l.isDuplicate(new_title)) {
 			System.out.println("제목이 중복됩니다!");
 			System.out.println("제목을 수정해주세요.");
 			return;
 		}
+		
 		sc.nextLine();
+		
 		System.out.print("새 내용 입력 -> ");
 		String new_description = sc.nextLine().trim();
 		for (TodoItem item : l.getList()) {
@@ -84,6 +93,45 @@ public class TodoUtil {
 		System.out.println("[전체 목록]");
 		for (TodoItem item : l.getList()) {
 			System.out.println(item.toString());
+		}
+	}
+	
+	public static void saveList(TodoList l, String filename) {
+		try {
+			Writer w = new FileWriter(filename);
+			for (TodoItem item : l.getList()) {
+				w.write(item.toSaveString());
+			}
+			w.close();
+			System.out.println("TodoList를 " + filename + "에 저장 완료!");
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	public static void loadList(TodoList l, String filename) {
+		//BufferedReader, FileReader, StringTokenizer
+		try {
+			BufferedReader br = new BufferedReader(new FileReader(filename));
+			String oneline;
+			
+			while((oneline = br.readLine()) != null) {
+				StringTokenizer st = new StringTokenizer(oneline, "##");
+				String title = st.nextToken();
+				String desc = st.nextToken();
+				String current_date = st.nextToken();
+				
+				TodoItem t = new TodoItem(title, desc, current_date);
+				l.addItem(t);
+			}
+			br.close();
+			System.out.println(filename + "의 TodoList를 로딩 완료!");
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
 		}
 	}
 }
