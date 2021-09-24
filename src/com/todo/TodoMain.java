@@ -34,9 +34,14 @@ public class TodoMain {
 			case "edit":
 				TodoUtil.updateItem(l);
 				break;
-			
+			/*
 			case "find":
 				TodoUtil.findItem(l);
+				break;
+			*/
+				
+			case "find_cate":
+				TodoUtil.findKeywordItem(l);
 				break;
 				
 			case "ls":
@@ -60,6 +65,13 @@ public class TodoMain {
 			case "ls_date":
 				l.sortByDate();
 				System.out.println("[날짜순] 정렬 완료!");
+				isList = true;
+				break;
+				
+			case "ls_date_desc":
+				l.sortByDate();
+				l.reverseList();
+				System.out.println("[날짜역순] 정렬 완료!");
 				isList = true;
 				break;
 				

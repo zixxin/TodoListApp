@@ -135,6 +135,7 @@ public class TodoUtil {
 		}
 	}
 	
+	/*
 	public static void findItem(TodoList l) {
 		int count = 0;
 		String find;
@@ -147,6 +148,29 @@ public class TodoUtil {
 		
 		for (TodoItem item : l.getList()) {
 			if (item.contains(find)) {
+				System.out.println(item.toString());
+			}
+		}
+	}
+	*/
+	
+	public static void findKeywordItem(TodoList l) {
+		int count = 0;
+		int num = 1;
+		String find;
+		
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.print("[키워드 검색]\n"
+				+ "검색할 키워드 입력 -> ");
+		find = sc.next();  
+		
+		sc.nextLine();
+		
+		for (TodoItem item : l.getList()) {
+			if (find.equals(item.getCategory())) {
+				System.out.print(num + ".");
+				num ++;
 				System.out.println(item.toString());
 			}
 		}
