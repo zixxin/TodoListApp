@@ -34,6 +34,12 @@ public class TodoMain {
 			case "edit":
 				TodoUtil.updateItem(l);
 				break;
+			
+			/*
+			case "find":
+				TodoUtil.findItem(l);
+				break;
+			*/
 				
 			case "ls":
 				TodoUtil.listAll(l);
