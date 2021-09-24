@@ -171,9 +171,11 @@ public class TodoUtil {
 			if (find.equals(item.getCategory())) {
 				System.out.print(num + ".");
 				num ++;
+				count ++;
 				System.out.println(item.toString());
 			}
 		}
+		System.out.println("\n총 "+count+"개의 항목이 검색됨");
 	}
 	
 	public static void saveList(TodoList l, String filename) {
