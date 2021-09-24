@@ -34,11 +34,12 @@ public class TodoMain {
 			case "edit":
 				TodoUtil.updateItem(l);
 				break;
-			/*
+
+				/*
 			case "find":
 				TodoUtil.findItem(l);
 				break;
-			*/
+				*/
 				
 			case "find_cate":
 				TodoUtil.findKeywordItem(l);
@@ -73,6 +74,10 @@ public class TodoMain {
 				l.reverseList();
 				System.out.println("[날짜역순] 정렬 완료!");
 				isList = true;
+				break;
+				
+			case "ls_cate":
+				TodoUtil.viewCategory(l);
 				break;
 				
 			case "help":

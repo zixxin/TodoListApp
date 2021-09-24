@@ -15,6 +15,7 @@ public class Menu {
         System.out.println("[ls_name_desc] 제목역순 정렬");
         System.out.println("[ls_date] 날짜순 정렬");
         System.out.println("[ls_date_desc] 날짜역순 정렬");
+        System.out.println("[ls_cate] 카테고리 목록 출력");
         System.out.println("[exit] 종료");
     }
    

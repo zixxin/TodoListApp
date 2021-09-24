@@ -178,6 +178,16 @@ public class TodoUtil {
 		System.out.println("\n총 "+count+"개의 항목이 검색됨");
 	}
 	
+	public static void viewCategory(TodoList l) {
+		int count = 0;
+		
+		for (TodoItem item : l.getList()) {
+			count ++;
+			System.out.print(item.getCategory() + " / ");
+		}
+		System.out.println("\n총 "+count+"개의 카테고리가 검색됨");
+	}
+	
 	public static void saveList(TodoList l, String filename) {
 		try {
 			Writer w = new FileWriter(filename);
