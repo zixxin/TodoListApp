@@ -135,7 +135,6 @@ public class TodoUtil {
 		}
 	}
 	
-	/*
 	public static void findItem(TodoList l) {
 		int count = 0;
 		String find;
@@ -147,10 +146,11 @@ public class TodoUtil {
 		find = sc.next();  
 		
 		for (TodoItem item : l.getList()) {
-			System.out.println(item.toString());
+			if (item.contains(find)) {
+				System.out.println(item.toString());
+			}
 		}
 	}
-	*/
 	
 	public static void saveList(TodoList l, String filename) {
 		try {
