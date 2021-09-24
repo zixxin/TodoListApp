@@ -188,7 +188,7 @@ public class TodoUtil {
 			count ++;
 			System.out.print(item.getCategory() + " / ");
 		}
-		System.out.println("총 "+count+"개의 카테고리가 검색됨");
+		System.out.println("\n총 "+count+"개의 카테고리가 검색됨");
 	}
 	
 	public static void saveList(TodoList l, String filename) {
