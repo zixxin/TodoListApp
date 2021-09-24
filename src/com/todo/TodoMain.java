@@ -34,12 +34,10 @@ public class TodoMain {
 			case "edit":
 				TodoUtil.updateItem(l);
 				break;
-
-				/*
+				
 			case "find":
 				TodoUtil.findItem(l);
 				break;
-				*/
 				
 			case "find_cate":
 				TodoUtil.findKeywordItem(l);
