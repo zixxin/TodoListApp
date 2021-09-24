@@ -182,13 +182,21 @@ public class TodoUtil {
 	}
 	
 	public static void viewCategory(TodoList l) {
-		int count = 0;
+		ArrayList<String> arr = new ArrayList<String>();
 		
 		for (TodoItem item : l.getList()) {
-			count ++;
-			System.out.print(item.getCategory() + " / ");
+			arr.add(item.getCategory());
 		}
-		System.out.println("\n총 "+count+"개의 카테고리가 검색됨");
+		
+		Set<String> set = new HashSet<String>(arr);
+		//List<String> newList =new ArrayList<String>(set);
+			
+		Iterator<String> it = set.iterator();
+		while(it.hasNext()){
+			System.out.print(it.next()+" / ");
+		}
+		
+		System.out.println("\n총 "+set.size()+"개의 카테고리가 등록됨");
 	}
 	
 	public static void saveList(TodoList l, String filename) {
